@@ -1,4 +1,4 @@
-<section class="my-28" id="contact">
+<section class="my-5" id="contact">
   <header class="px-5 text-4xl font-bold pt-10">
     <h2>Contact Me</h2>
     <p class="text-base pt-2 font-thin">I'd love to hear your thoughts!</p>
@@ -100,10 +100,22 @@
         <input type="hidden" name="form-name" value="contact" />
 
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" class="gradient" required />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="py-3 px-4 text-gray-400"
+          required
+        />
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="gradient" required />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="py-3 px-4 text-gray-400"
+          required
+        />
 
         <label for="message">Message</label>
         <textarea
@@ -111,16 +123,18 @@
           id="message"
           cols="25"
           rows="5"
-          class="gradient"
+          class="py-3 px-4 text-gray-400"
           required
         ></textarea>
 
-        <button
-          type="submit"
-          class="border border-gray-500 p-2 rounded-lg w-auto mr-auto shadow-md"
-        >
-          Send Message
-        </button>
+        <div class="pt-3">
+          <button
+            type="submit"
+            class="border border-gray-500 p-3 pt-2 hover:bg-blue-400 rounded-lg w-auto mr-auto shadow-md"
+          >
+            Send Message
+          </button>
+        </div>
       </form>
     </div>
   </div>
