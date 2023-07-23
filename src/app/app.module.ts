@@ -10,6 +10,8 @@ import { ProjectComponent } from './project/project.component';
 import { SkillComponent } from './skill/skill.component';
 import { LottieModule } from 'ngx-lottie';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
+
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -24,7 +26,7 @@ export function playerFactory(): any {
     SkillComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, LottieModule.forRoot({ player: playerFactory })],
+  imports: [BrowserModule, LottieModule.forRoot({ player: playerFactory }), FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

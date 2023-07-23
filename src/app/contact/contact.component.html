@@ -7,13 +7,13 @@
     <!-- Contact Information -->
     <div class="md:w-6/12 md:px-0 p-5 my-5">
       <div>
-        <p class="font-bold">Aditya Singh</p>
-        <p class="font-thin">Delhi, India</p>
+        <p class="font-bold">{{ myName }}</p>
+        <p class="font-thin">{{ myLocation }}</p>
         <a
           href="mailto: samant04aditya@gmail.com"
           class="border-b-2 mt-3 inline-block border-gray-500"
         >
-          samant04aditya@gmail.com
+          {{ myEmail }}
         </a>
       </div>
       <a
@@ -94,25 +94,27 @@
     >
       <form
         class="flex flex-col space-y-3 m-auto w-full"
+        #login="ngForm"
         name="contact"
-        method="post"
+        (ngSubmit)="sendEmail($event, login)"
       >
-        <input type="hidden" name="form-name" value="contact" />
-
-        <label for="name">Name</label>
+        <label for="username">Name</label>
         <input
           type="text"
-          name="name"
-          id="name"
+          name="username"
+          [(ngModel)]="username"
+          name="username"
+          id="username"
           class="py-3 px-4 text-gray-400"
           required
         />
 
-        <label for="email">Email</label>
+        <label for="useremail">Email</label>
         <input
           type="email"
-          name="email"
-          id="email"
+          name="useremail"
+          id="useremail"
+          [(ngModel)]="useremail"
           class="py-3 px-4 text-gray-400"
           required
         />
@@ -120,7 +122,7 @@
         <label for="message">Message</label>
         <textarea
           name="message"
-          id="message"
+          [(ngModel)]="message"
           cols="25"
           rows="5"
           class="py-3 px-4 text-gray-400"
@@ -130,10 +132,34 @@
         <div class="pt-3">
           <button
             type="submit"
-            class="border border-gray-500 p-3 pt-2 hover:bg-blue-400 rounded-lg w-auto mr-auto shadow-md"
+            value="Send"
+            class="border border-gray-500 p-3 hover:bg-blue-400 rounded-lg w-auto mr-auto shadow-md"
           >
             Send Message
           </button>
+        </div>
+        <div
+          *ngIf="showMsg"
+          id="toast-simple"
+          class="flex items-center w-full max-w-xs p-4 space-x-4 text-white bg-slate-700 divide-x divide-gray-200 rounded-lg shadow dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+          role="alert"
+        >
+          <svg
+            class="w-5 h-5 text-blue-600 dark:text-blue-500 rotate-45"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 18 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"
+            />
+          </svg>
+          <div class="pl-4 text-sm font-normal">Message sent successfully.</div>
         </div>
       </form>
     </div>

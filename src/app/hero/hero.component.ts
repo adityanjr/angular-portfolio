@@ -7,6 +7,13 @@ import { AnimationOptions } from 'ngx-lottie';
   templateUrl: './hero.component.html',
 })
 export class HeroComponent implements OnInit {
+
+  about: string = `I have a passion for developing apps and websites and coding real world
+  problems. I never stop learning and take every project as another
+  adventure.`;
+
+  bigName: string = "Aditya";
+
   options: AnimationOptions = {
     path: '/assets/astronaut.json',
   };
